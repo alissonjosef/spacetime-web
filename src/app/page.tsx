@@ -1,7 +1,7 @@
-import { User } from 'lucide-react'
-
-import Image from 'next/image'
-import nlwLogo from '../assets/logo-nlw.svg'
+import { Copyright } from '@/components/Copyright'
+import { EmptyMemory } from '@/components/EmptyMemory'
+import { HeroSession } from '@/components/HeroSession'
+import { SignIn } from '@/components/SignIn'
 
 export default function Home() {
   return (
@@ -12,65 +12,16 @@ export default function Home() {
 
         <div className="absolute bottom-0 right-2 top-0 w-2 bg-stripes"></div>
 
-        <a
-          href=""
-          className="flex items-center gap-3 text-left transition-colors hover:text-gray-50"
-        >
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-400">
-            <User className="h-5 w-5 text-gray-500" />
-          </div>
-          <p className="max-w-[140px] text-sm leading-snug">
-            <span className="underline">Crie sua conta</span> e salve suas
-            memórias!
-          </p>
-        </a>
+        <SignIn />
 
-        <div className="space-y-5">
-          <Image src={nlwLogo} alt="NLW SpaceTime" />
-          <div className="spacey-1 max-w-[420px]">
-            <h1 className=" text-5xl font-bold leading-tight text-gray-50">
-              Sua cápsula do tempo
-            </h1>
-            <p className="text-lg leading-relaxed">
-              Colecione momentos marcantes da sua jornada e compartilhe (se
-              quiser) com o mundo!
-            </p>
-          </div>
+        <HeroSession />
 
-          <a
-            className="inline-block rounded-full bg-green-500 px-5 py-3 font-alt text-sm uppercase leading-none text-black hover:bg-green-600"
-            href=""
-          >
-            CADASTRAR LEMBRANçA
-          </a>
-        </div>
-
-        <div className="text-sm leading-relaxed text-gray-200">
-          <p>
-            Feito com 💜 por{' '}
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://www.linkedin.com/in/2315alisson-juan/"
-              className="underline hover:text-gray-100"
-            >
-              Alisson Silva
-            </a>
-          </p>
-        </div>
+        <Copyright />
       </div>
 
       {/* Ringht */}
       <div className="flex flex-col bg-[url(../assets/bg-star.svg)] bg-cover p-16">
-        <div className="flex flex-1 items-center justify-center">
-          <p className="w-[360px] text-center leading-relaxed">
-            Você ainda não registrou nenhuma lembrança, comece a{' '}
-            <a href="" className="underline hover:text-gray-50">
-              criar agora
-            </a>
-            !
-          </p>
-        </div>
+        <EmptyMemory />
       </div>
     </main>
   )
